@@ -1,0 +1,5 @@
+concurrent = 3
+sentry_dsn = "${SENTRY_DSN}"
+[[runners]]
+  name = "veluga-gitlab-runner"
+  executor = "docker"

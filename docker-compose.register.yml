@@ -1,0 +1,15 @@
+version: "3"
+services:
+  gitlab-runner:
+    command: [
+      'register',
+      '--non-interactive',
+      '--docker-image', 'alpine:3',
+      '--executor', 'docker',
+      '--url', 'https://gitlab.com/',
+      '--registration-token', '$PROJECT_REGISTRATION_TOKEN',
+      '--description', 'docker-runner',
+      '--tag-list', 'docker,aws',
+      '--run-untagged',
+      '--locked', 'false'
+    ]

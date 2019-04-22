@@ -1,0 +1,10 @@
+version: "3"
+services:
+  config:
+    image: velugabrewery/gitlab-ci-docker-aws:latest
+    volumes:
+      - ./config:/root
+    working_dir: /root
+    command: sh -c "envsubst < config.toml.template > config.toml"
+    env_file:
+      - .env
