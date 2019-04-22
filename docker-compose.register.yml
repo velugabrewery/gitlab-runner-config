@@ -4,12 +4,13 @@ services:
     command: [
       'register',
       '--non-interactive',
-      '--docker-image', 'alpine:3',
+      '--docker-image', 'alpine:latest',
       '--executor', 'docker',
       '--url', 'https://gitlab.com/',
       '--registration-token', '$PROJECT_REGISTRATION_TOKEN',
       '--description', 'docker-runner',
       '--tag-list', 'docker,aws',
       '--run-untagged',
-      '--locked', 'false'
+      '--locked', 'false',
+      '--docker-privileged',
     ]
